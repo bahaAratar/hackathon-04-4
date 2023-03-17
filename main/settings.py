@@ -225,33 +225,33 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-        'file': {
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': 'logging.txt',
-            'maxBytes': 1024*1024*5,
-            'backupCount': 5,
-        }
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console', 'file'],
-            'level': 'INFO',
-        },
-        'django.request': {
-            'handlers': ['console', 'file'],
-            'level': 'ERROR',
-        },
-        'myapp': {
-            'handlers': ['console', 'file'],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#         'file': {
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': 'logging.txt',
+#             'maxBytes': 1024*1024*5,
+#             'backupCount': 5,
+#         }
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console', 'file'],
+#             'level': 'INFO',
+#         },
+#         'django.request': {
+#             'handlers': ['console', 'file'],
+#             'level': 'ERROR',
+#         },
+#         'myapp': {
+#             'handlers': ['console', 'file'],
+#             'level': 'DEBUG',
+#             'propagate': False,
+#         },
+#     },
+# }
