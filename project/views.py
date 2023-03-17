@@ -82,3 +82,24 @@ class ChooseExecutorAPIView(generics.UpdateAPIView):
         return Response(serializer.data)
 
 
+class ProjectCompleteView(generics.UpdateAPIView):
+    serializer_class = ProjectCompleteSerializer
+    permission_classes = [IsAuthenticated]
+
+    def patch(self, request, *args, **kwargs):
+        project = get_object_or_404(Project, id=self.kwargs.get('project_id'))
+        user = self.request.user
+
+        if project.is_complete: 
+            return Response({'статус': 'ошибка', 'сообщение': 'Проект уже завершен.'})
+        
+        elif user != project.owner:
+            return Response({'статус': 'ошибка', 'сообщение': 'Вы не можете менять статус проекта.'})
+
+        if user == project.owner:
+            project.is_complete = True
+            project.save()
+            return Response({'статус': 'успешно', 'сообщение': 'Проект завершен'})
+        
+
+        return Response({'статус': 'ошибка', 'сообщение': 'Не удалось завершить проект'})

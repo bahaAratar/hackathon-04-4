@@ -11,8 +11,9 @@ router.register('projects', ProjectViewSet, basename='project')
 # router.register('ratings', RatingViewSet, basename='rating')
 
 urlpatterns = [
-    path('projects/<int:project_id>/', ProjectDetailAPIView.as_view(), name='project-detail'),
     path('projects/apply/<int:project_id>/', AddCandidateAPIView.as_view(), name='project-apply'),
     path('projects/choose_executor/<int:project_id>/', ChooseExecutorAPIView.as_view(), name='choose_executor'),
+    path('projects/complete/<int:project_id>/', ProjectCompleteView.as_view(), name='project_complete'),
+    path('projects/<int:project_id>/', ProjectDetailAPIView.as_view(), name='project-detail'),
     path('', include(router.urls)),
 ]

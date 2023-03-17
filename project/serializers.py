@@ -31,11 +31,17 @@ class AddCandidateSerializer(serializers.Serializer):
 class ExecutorSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'email']
+        fields = ('id', 'username', 'email')
 
 class ProjectCandidateSerializer(serializers.ModelSerializer):
     candidates = ExecutorSerializer(many=True, read_only=True)
     class Meta:
         model = Project
-        fields = ['id', 'candidates']
+        fields = ('id', 'candidates')
 
+class ProjectCompleteSerializer(serializers.ModelSerializer):
+    # project_id = serializers.IntegerField(required=True)
+    class Meta:
+        model = Project
+        fields = ('project_id', 'is_complete',)
+        read_only_fields = ('project_id',)
