@@ -1,0 +1,37 @@
+INSTALLED_APPS = [
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
+]
+
+SITE_ID = 1
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'OAUTH_PKCE_ENABLED': True,
+    }
+}
+
+venv/lib/allauth/account/signals.py
+
+from django.dispatch import receiver
+from allauth.account.signals import user_signed_up
+
+@receiver(user_signed_up)
+def user_signed_up_(request, user, **kwargs):
+    user.is_active = True
+    user.save()
+
+
+http://127.0.0.1:8000/admin/sites/site/
+
+http://127.0.0.1:8000/admin/socialaccount/socialapp/
