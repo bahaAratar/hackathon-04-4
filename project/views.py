@@ -24,6 +24,7 @@ class ProjectDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Project.objects.all()
     lookup_url_kwarg = 'project_id'
 
+
 class AddCandidateAPIView(generics.CreateAPIView):
     serializer_class = AddCandidateSerializer
     permission_classes = [IsAuthenticated]
@@ -31,8 +32,23 @@ class AddCandidateAPIView(generics.CreateAPIView):
     def post(self, request, *args, **kwargs):
         project = get_object_or_404(Project, pk=self.kwargs.get('project_id'))
         user = self.request.user
+
+        # Проверяем, что пользователь не является создателем проекта
+        if user == project.owner:
+            return Response({'статус': 'ошибка', 'сообщение': 'Вы не можете подать заявку на свой собственный проект.'})
+
+        # Проверяем, что пользователь еще не является кандидатом на проекте
+        if user in project.candidates.all():
+            return Response({"статус":"ошибка","сообщение":"Вы уже подали заявку на участие в этом проекте."})
+
+        # Проверяем, что пользователь не является исполнителем проекта
+        if user == project.executor:
+            return Response({'статус': 'ошибка', 'сообщение': 'Вы не можете подать заявку на проект, над которым уже работаете.'})
+
+        # Добавляем пользователя в список кандидатов проекта
         project.candidates.add(user)
-        return Response({'status': 'success', 'message': 'Your application has been submitted successfully.'})
+
+        return Response({'статус': 'успешно', 'сообщение': 'Ваша заявка успешно отправлена'})
 
 class ChooseExecutorAPIView(generics.UpdateAPIView):
     serializer_class = ProjectSerializer
@@ -43,19 +59,19 @@ class ChooseExecutorAPIView(generics.UpdateAPIView):
         project = self.get_object()
         owner = project.owner
         if owner != request.user:
-            return Response({'detail': 'У вас нет разрешения на выполнение этого действия.'}, status=status.HTTP_403_FORBIDDEN)
+            return Response({'сообщение': 'У вас нет разрешения на выполнение этого действия.'}, status=status.HTTP_403_FORBIDDEN)
 
         executor_id = request.data.get('executor_id')
         if not executor_id:
-            return Response({'detail': 'Требуется - executor_id.'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'Требуетя': 'executor_id'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
             executor = User.objects.get(id=executor_id)
         except User.DoesNotExist:
-            return Response({'detail': 'Такого исполнителя не существует.'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'сообщение': 'Такого исполнителя не существует.'}, status=status.HTTP_400_BAD_REQUEST)
 
         if not project.candidates.filter(id=executor_id).exists():
-            return Response({'detail': 'Исполнитель не является кандидатом на этот проект.'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'сообщение': 'Исполнитель не является кандидатом на этот проект.'}, status=status.HTTP_400_BAD_REQUEST)
 
         project.executor = executor
         project.is_available = False
@@ -66,3 +82,24 @@ class ChooseExecutorAPIView(generics.UpdateAPIView):
         return Response(serializer.data)
 
 
+class ProjectCompleteView(generics.UpdateAPIView):
+    serializer_class = ProjectCompleteSerializer
+    permission_classes = [IsAuthenticated]
+
+    def patch(self, request, *args, **kwargs):
+        project = get_object_or_404(Project, id=self.kwargs.get('project_id'))
+        user = self.request.user
+
+        if project.is_complete: 
+            return Response({'статус': 'ошибка', 'сообщение': 'Проект уже завершен.'})
+        
+        elif user != project.owner:
+            return Response({'статус': 'ошибка', 'сообщение': 'Вы не можете менять статус проекта.'})
+
+        if user == project.owner:
+            project.is_complete = True
+            project.save()
+            return Response({'статус': 'успешно', 'сообщение': 'Проект завершен'})
+        
+
+        return Response({'статус': 'ошибка', 'сообщение': 'Не удалось завершить проект'})

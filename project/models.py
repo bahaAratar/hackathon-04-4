@@ -22,6 +22,7 @@ class Project(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     is_available = models.BooleanField(default=True)
     is_accepted = models.BooleanField(default=False)#для добавления возможности приема другим лицом заказа
+    is_complete = models.BooleanField(default=False)#для возможности ставить рейтинг
     candidates = models.ManyToManyField(User, related_name='projects_candidate', blank=True)
 
     def __str__(self):

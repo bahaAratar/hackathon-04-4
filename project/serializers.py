@@ -25,29 +25,23 @@ class ProjectDetailSerializer(serializers.ModelSerializer):
 
 
 class AddCandidateSerializer(serializers.Serializer):
-    project_id = serializers.IntegerField()
+    project_id = serializers.IntegerField(required=True)
 
-    def validate(self, data):
-        project_id = data['project_id']
-        project = Project.objects.filter(pk=project_id, is_available=True, is_accepted=False).first()
-        if not project:
-            raise serializers.ValidationError('Invalid project ID or project is not available for application.')
-        if self.context['request'].user == project.owner:
-            raise serializers.ValidationError('You cannot apply to your own project.')
-        if self.context['request'].user in project.candidates.all():
-            raise serializers.ValidationError('You have already applied to this project.')
-        if self.context['request'].user == project.executor:
-            raise serializers.ValidationError('You cannot apply to a project you are already working on.')
-        return data
 
 class ExecutorSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'email']
+        fields = ('id', 'username', 'email')
 
 class ProjectCandidateSerializer(serializers.ModelSerializer):
     candidates = ExecutorSerializer(many=True, read_only=True)
     class Meta:
         model = Project
-        fields = ['id', 'candidates']
+        fields = ('id', 'candidates')
 
+class ProjectCompleteSerializer(serializers.ModelSerializer):
+    # project_id = serializers.IntegerField(required=True)
+    class Meta:
+        model = Project
+        fields = ('project_id', 'is_complete',)
+        read_only_fields = ('project_id',)
