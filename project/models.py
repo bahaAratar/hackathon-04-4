@@ -22,7 +22,7 @@ class Project(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     is_available = models.BooleanField(default=True)
     is_accepted = models.BooleanField(default=False)#для добавления возможности приема другим лицом заказа
-    # candidates = models.ManyToManyField(User, related_name='projects_candidate', blank=True)
+    candidates = models.ManyToManyField(User, related_name='projects_candidate', blank=True)
 
     def __str__(self):
         return self.description[:50]

@@ -4890,3 +4890,331 @@ Watching for file changes with StatReloader
 "GET /accounts/google/login/?process=login HTTP/1.1" 200 776
 Watching for file changes with StatReloader
 "POST /account/register/ HTTP/1.1" 201 124
+Watching for file changes with StatReloader
+"POST /account/register/ HTTP/1.1" 201 124
+"POST /account/register/ HTTP/1.1" 201 124
+Watching for file changes with StatReloader
+"GET /account/activate/cd648b60-bbe8-4d3d-bdc8-b68f5f0b1f51 HTTP/1.1" 301 0
+"GET /account/activate/cd648b60-bbe8-4d3d-bdc8-b68f5f0b1f51/ HTTP/1.1" 200 5481
+"GET /account/activate/88b4c9c1-cf7e-4efe-94b9-b1ad45136088 HTTP/1.1" 301 0
+"GET /account/activate/88b4c9c1-cf7e-4efe-94b9-b1ad45136088/ HTTP/1.1" 200 5481
+"GET /admin/accounts/customuser/3/change/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/accounts/customuser/3/change/ HTTP/1.1" 200 2273
+"POST /admin/login/?next=/admin/accounts/customuser/3/change/ HTTP/1.1" 302 0
+"GET /admin/accounts/customuser/3/change/ HTTP/1.1" 200 24087
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/accounts/customuser/ HTTP/1.1" 200 10715
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/accounts/customuser/3/change/ HTTP/1.1" 200 24087
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/accounts/customuser/ HTTP/1.1" 200 10715
+"GET /admin/accounts/customuser/2/change/ HTTP/1.1" 200 24129
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/accounts/customuser/ HTTP/1.1" 200 10715
+"GET /admin/accounts/customuser/1/change/ HTTP/1.1" 200 24162
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET /admin/accounts/customuser/ HTTP/1.1" 200 10715
+"GET /project/projects HTTP/1.1" 301 0
+"GET /project/projects/ HTTP/1.1" 401 183
+"POST /account/login/ HTTP/1.1" 200 483
+"GET /project/projects HTTP/1.1" 301 0
+"GET /project/projects/ HTTP/1.1" 200 2
+Internal Server Error: /project/projects
+Traceback (most recent call last):
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/project/projects/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /project/projects
+Traceback (most recent call last):
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/project/projects/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /project/projects HTTP/1.1" 500 74761
+"POST /project/projects/ HTTP/1.1" 400 159
+"POST /project/projects/ HTTP/1.1" 400 40
+"GET /project/category HTTP/1.1" 404 5795
+"GET /project/category/ HTTP/1.1" 404 5798
+"GET /project/categories/ HTTP/1.1" 401 183
+"GET /project/categories/ HTTP/1.1" 200 2
+"POST /project/categories/ HTTP/1.1" 400 37
+"POST /project/categories/ HTTP/1.1" 201 33
+"POST /project/categories/ HTTP/1.1" 201 37
+"GET /project/categories/ HTTP/1.1" 200 73
+"POST /project/projects/ HTTP/1.1" 201 245
+"POST /project/projects/apply/12/ HTTP/1.1" 404 5826
+"POST /project/projects/apply/1/ HTTP/1.1" 404 5823
+"POST /project/projects/1/apply/ HTTP/1.1" 401 183
+"POST /project/projects/1/apply/ HTTP/1.1" 200 82
+"POST /project/projects/1/choose_excecutor/ HTTP/1.1" 404 5856
+"POST /project/projects/1/choose_executor/ HTTP/1.1" 405 41
+"GET /project/projects/1/choose_executor/ HTTP/1.1" 405 40
+"PUT /project/projects/1/choose_executor/ HTTP/1.1" 400 159
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/urls.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/urls.py changed, reloading.
+Watching for file changes with StatReloader
+"PUT /project/projects/choose_executor/1/ HTTP/1.1" 400 159
+"PUT /project/projects/choose_executor/1/ HTTP/1.1" 400 159
+"PUT /project/projects/choose_executor/1/ HTTP/1.1" 400 159
+"PUT /project/projects/choose_executor/ HTTP/1.1" 404 23
+"PUT /project/projects/choose_executor/1/ HTTP/1.1" 400 159
+"PUT /project/projects/choose_executor/1/ HTTP/1.1" 200 290
+"GET /project/projects/choose_executor/1/ HTTP/1.1" 405 40
+"GET /project/projects/choose_executor/ HTTP/1.1" 404 23
+Watching for file changes with StatReloader
+"GET /project/projects/choose_executor/ HTTP/1.1" 404 23
+"GET /project/projects/ HTTP/1.1" 200 292
+"GET /project/projects/apply/ HTTP/1.1" 404 23
+"GET /project/projects/apply/1/ HTTP/1.1" 405 40
+"POST /project/projects/apply/1/ HTTP/1.1" 200 82
+"POST /project/projects/1/ HTTP/1.1" 405 41
+"GET /project/projects/1/ HTTP/1.1" 200 307
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /project/projects/ HTTP/1.1" 400 159
+"POST /project/projects/ HTTP/1.1" 201 292
+Internal Server Error: /project/projects/apply/2/
+Traceback (most recent call last):
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'filter'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py", line 34, in post
+    owner = self.request.filter('owner')
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'filter'
+Internal Server Error: /project/projects/apply/2/
+Traceback (most recent call last):
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'filter'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py", line 34, in post
+    owner = self.request.filter('owner')
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'filter'
+"POST /project/projects/apply/2/ HTTP/1.1" 500 107468
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /project/projects/apply/2/
+Traceback (most recent call last):
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py", line 36, in post
+    owner = get_object_or_404(User, owner =self.kwargs.get('owner'))
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/db/models/query.py", line 653, in get
+    raise self.model.MultipleObjectsReturned(
+accounts.models.CustomUser.MultipleObjectsReturned: get() returned more than one CustomUser -- it returned 2!
+Internal Server Error: /project/projects/apply/2/
+Traceback (most recent call last):
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py", line 36, in post
+    owner = get_object_or_404(User, owner =self.kwargs.get('owner'))
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+  File "/home/samat/Desktop/py25/django/project/hackathon-04-4/venv/lib/python3.10/site-packages/django/db/models/query.py", line 653, in get
+    raise self.model.MultipleObjectsReturned(
+accounts.models.CustomUser.MultipleObjectsReturned: get() returned more than one CustomUser -- it returned 2!
+"POST /project/projects/apply/2/ HTTP/1.1" 500 108510
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/samat/Desktop/py25/django/project/hackathon-04-4/project/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /project/projects/apply/2/ HTTP/1.1" 200 82
+"POST /project/projects/ HTTP/1.1" 201 292
+"GET /project/projects/ HTTP/1.1" 200 878
+"GET /project/projects/2/ HTTP/1.1" 200 309
+"GET /project/choose_executor/2/ HTTP/1.1" 404 5825
+"GET /project/choose_executor/ HTTP/1.1" 404 5819
+"GET /project/choose_executor/ HTTP/1.1" 404 5819
+"GET /projects/choose_executor/ HTTP/1.1" 404 2709
+"GET /projects/choose_executor/2/ HTTP/1.1" 404 2715
+"GET /project/projects/choose_executor/2/ HTTP/1.1" 405 40
+"PATCH /project/projects/choose_executor/2/ HTTP/1.1" 400 46
+"PATCH /project/projects/choose_executor/2/ HTTP/1.1" 400 46
+"PATCH /project/projects/choose_executor/2/ HTTP/1.1" 400 46
+"PATCH /project/projects/choose_executor/2/ HTTP/1.1" 400 106
+"PATCH /project/projects/choose_executor/2/ HTTP/1.1" 200 288
